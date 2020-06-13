@@ -52,9 +52,12 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingTT = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingQH = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingXP = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuEditXP = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewXP = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -69,9 +72,10 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridXaPhuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingQH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingXP)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -233,6 +237,7 @@
             // 
             // gridXaPhuong
             // 
+            this.gridXaPhuong.ContextMenuStrip = this.contextMenuStrip1;
             this.gridXaPhuong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridXaPhuong.Location = new System.Drawing.Point(2, 21);
             this.gridXaPhuong.MainView = this.gridView3;
@@ -287,13 +292,35 @@
             this.gridColumn11.FieldName = "MAQH";
             this.gridColumn11.Name = "gridColumn11";
             // 
-            // bindingSource1
+            // bindingTT
             // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            this.bindingTT.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
-            // bindingSource2
+            // bindingQH
             // 
-            this.bindingSource2.CurrentChanged += new System.EventHandler(this.bindingSource2_CurrentChanged);
+            this.bindingQH.CurrentChanged += new System.EventHandler(this.bindingSource2_CurrentChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuEditXP,
+            this.mnuNewXP});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 48);
+            // 
+            // mnuEditXP
+            // 
+            this.mnuEditXP.Name = "mnuEditXP";
+            this.mnuEditXP.Size = new System.Drawing.Size(174, 22);
+            this.mnuEditXP.Text = "Sửa Xã Phường...";
+            this.mnuEditXP.Click += new System.EventHandler(this.mnuEditXP_Click);
+            // 
+            // mnuNewXP
+            // 
+            this.mnuNewXP.Name = "mnuNewXP";
+            this.mnuNewXP.Size = new System.Drawing.Size(174, 22);
+            this.mnuNewXP.Text = "Thêm Xã Phường...";
+            this.mnuNewXP.Click += new System.EventHandler(this.mnuNewXP_Click);
             // 
             // FrmDVHC
             // 
@@ -321,9 +348,10 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridXaPhuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingQH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingXP)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,8 +380,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.BindingSource bindingSource2;
-        private System.Windows.Forms.BindingSource bindingSource3;
+        private System.Windows.Forms.BindingSource bindingTT;
+        private System.Windows.Forms.BindingSource bindingQH;
+        private System.Windows.Forms.BindingSource bindingXP;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuEditXP;
+        private System.Windows.Forms.ToolStripMenuItem mnuNewXP;
     }
 }

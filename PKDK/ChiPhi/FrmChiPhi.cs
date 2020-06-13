@@ -14,7 +14,6 @@ namespace PKDK.ChiPhi
     public partial class FrmChiPhi : DevExpress.XtraEditors.XtraForm
     {
         QLPK.DataAccess.ChiDinh chiDinh = new QLPK.DataAccess.ChiDinh();
-        QLPK.DataAccess.DonThuoc donThuoc = new QLPK.DataAccess.DonThuoc();
         QLPK.DataAccess.PhieuThu phieuThu = new QLPK.DataAccess.PhieuThu();
         String m_DotKhamID, m_MaPT;
 
@@ -49,7 +48,6 @@ namespace PKDK.ChiPhi
         private void FrmChiPhi_Load(object sender, EventArgs e)
         {
             bindingDichVu.DataSource = chiDinh.getDataTable(DotKhamID, "");
-            bindingThuoc.DataSource = donThuoc.getDataTable(DotKhamID);
             ucChiPhi1.loadData(DotKhamID);
             btnThanhToan.Enabled = ucChiPhi1.ChuaThu > 0;
             txtNgay.EditValue = DateTime.Today;
@@ -73,28 +71,9 @@ namespace PKDK.ChiPhi
             if (drv1["MaPT"] != DBNull.Value)
             {
                 chiDinh.updateMaPT(DotKhamID, drv1["MaPT"].ToString());
-                donThuoc.updateMaPT(DotKhamID, drv1["MaPT"].ToString());
                 phieuThu.deleteData(drv1["MaPT"].ToString());
                 FrmChiPhi_Load(null, null);
             }
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            DataRowView drv2 = (DataRowView)bindingThuoc.Current;
-            if (drv2["MaPT"] != DBNull.Value)
-            {
-                chiDinh.updateMaPT(DotKhamID, drv2["MaPT"].ToString());
-                donThuoc.updateMaPT(DotKhamID, drv2["MaPT"].ToString());
-                phieuThu.deleteData(drv2["MaPT"].ToString());
-                FrmChiPhi_Load(null, null);
-            }
-        }
-
-        private void gridThuoc_Click(object sender, EventArgs e)
-        {
-            DataRowView drv = (DataRowView)bindingThuoc.Current;
-            if (drv != null && drv["MaPT"] != DBNull.Value) m_MaPT = drv["MaPT"].ToString();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -106,11 +85,6 @@ namespace PKDK.ChiPhi
         private void bindingDichVu_CurrentChanged(object sender, EventArgs e)
         {
             gridControl1_Click(null, null);
-        }
-
-        private void bindingThuoc_CurrentChanged(object sender, EventArgs e)
-        {
-            gridThuoc_Click(null, null);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
